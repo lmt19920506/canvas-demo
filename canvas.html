@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="draw"
+      width="600"
+      height="500"
+      style="border: 1px solid red"
+    ></canvas>
+  </body>
+  <script>
+    // 获取出canvas标签
+    // const draw = document.getElementById("draw");
+    // 获取出canvas的2d绘图环境
+    // const cvs = draw.getContext("2d");
+
+    /**
+     * // cvs 这个就是你的画板，接下来就可以在cvs操作，进行绘制
+            cvs.fillStyle; // 填充的样式
+            cvs.strokeStyle; // 描边的样式. 笔触颜色（边框的颜色）
+            cvs.lineWidth; //边框的宽度
+
+    // 绘制图形有2种方式
+        cvs.fill(); // 填充
+        cvs.stroke(); // 描边
+     *
+    */
+
+    /**
+     *.  绘制线条
+            cvs.moveTo(x,y); // 起点
+            cvs.lineTo(x,y); // 终点
+            如果没有moveTo就把上一个挨着的lineTo作为起点
+            假如第一个不是moveTo而是lineTo，那么lineTo就是起始坐标
+
+            cvs.beginPath(); // 开始一条路径
+            cvs.closePath(); // 关闭路径
+     *
+     *
+     */
+
+     /**
+      *  设置线条交汇处的样式
+            cvs.lineJoin = "miter" | "bevel" | "round";
+            miter: 斜接
+            bevel: 平接
+            round: 圆接
+
+        设置一条线段的结束端点样式
+            cvs.lineCap = "butt" | "round" | "square";
+            butt: 平头
+            round: 圆头
+            square: 方头
+      *
+      * /
+
+    function draw1() {
+      const draw = document.getElementById("draw");
+      const cvs = draw.getContext("2d");
+      cvs.beginPath(); // 开始一条路径
+      cvs.moveTo(50, 50);
+      cvs.lineTo(150, 50);
+      cvs.lineTo(150, 150);
+      cvs.lineTo(50, 150);
+      cvs.closePath(); // 关闭路径
+      cvs.strokeStyle = "blue"; // 描边颜色
+      cvs.lineWidth = 5; // 边框宽度
+      cvs.stroke(); // 以边框的方式显示出来
+    }
+    draw1();
+  </script>
+</html>
