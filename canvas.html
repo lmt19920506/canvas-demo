@@ -44,7 +44,7 @@
      *
      */
 
-     /**
+    /**
       *  设置线条交汇处的样式
             cvs.lineJoin = "miter" | "bevel" | "round";
             miter: 斜接
@@ -73,5 +73,27 @@
       cvs.stroke(); // 以边框的方式显示出来
     }
     draw1();
+
+    /*
+       cvs.arc(x, y, radius, startAngle, endAngle, anticlockwise);
+            x: 圆心的x坐标
+            y: 圆心的y坐标
+            radius: 半径
+            startAngle: 起始弧度 0 ~ 2π
+            endAngle: 结束弧度 0 ~ 2π
+            anticlockwise: 可选，默认false，false表示顺时针，true表示逆时针
+    
+    */
+    function draw2() {
+      const draw = document.getElementById("draw");
+      const cvs = draw.getContext("2d");
+      cvs.beginPath();
+      cvs.arc(100, 200, 100, 0, Math.PI * 2, false); // 画一个圆
+      cvs.fillStyle = "pink"; // 填充颜色
+      //   cvs.strokeStyle = "green"; // 描边颜色
+      //   cvs.lineWidth = 8; // 边框宽度
+      cvs.fill(); // 以填充的方式显示出来
+    }
+    draw2();
   </script>
 </html>
